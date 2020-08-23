@@ -1,0 +1,12 @@
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/bin/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.deps.json
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/bin/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.runtimeconfig.json
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/bin/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.runtimeconfig.dev.json
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/bin/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.dll
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/bin/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.pdb
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.csprojAssemblyReference.cache
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.AssemblyInfoInputs.cache
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.AssemblyInfo.cs
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.csproj.CoreCompileInputs.cache
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.dll
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.pdb
+/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_02_Bipartite_Graphs/HW_02_Bipartite_Graphs/obj/Debug/netcoreapp3.1/HW_02_Bipartite_Graphs.genruntimeconfig.cache

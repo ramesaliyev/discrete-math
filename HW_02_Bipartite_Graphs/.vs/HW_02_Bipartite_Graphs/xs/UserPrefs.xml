@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{3C0F5F7A-758F-4FA9-8CBB-CA4188133FC0}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HW_02_Bipartite_Graphs/Program.cs">
+    <Files>
+      <File FileName="HW_02_Bipartite_Graphs/Program.cs" Line="165" Column="33" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HW_02_Bipartite_Graphs" expanded="True">
+            <Node name="HW_02_Bipartite_Graphs" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.HW__02__Bipartite__Graphs PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
