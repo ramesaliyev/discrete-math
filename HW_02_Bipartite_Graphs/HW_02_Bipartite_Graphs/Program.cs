@@ -3,10 +3,6 @@ using System.Collections.Generic;
 
 namespace HW_02_Bipartite_Graphs
 {
-    /**
-     * Explanation: This file contains 4 classes.
-     * 
-     */
     class Program
     {
         static void Main(string[] args)
@@ -56,7 +52,8 @@ namespace HW_02_Bipartite_Graphs
             Console.WriteLine("Enter a vertex (node) name and press enter to submit. Enter 'ok' to complete.");
 
             input = Console.ReadLine().Trim();
-            while (input != "ok") {
+            while (input != "ok")
+            {
                 if (graph.vertices.Contains(input))
                 {
                     Console.WriteLine("Error: Vertex with name '{0}' already exist, ignoring input...", input);
@@ -95,7 +92,8 @@ namespace HW_02_Bipartite_Graphs
                     {
                         graph.edges.Add((from, to));
                     }
-                } else
+                }
+                else
                 {
                     Console.WriteLine("Error: Input does not contain comma, ignoring input...");
                 }
@@ -151,7 +149,7 @@ namespace HW_02_Bipartite_Graphs
         public void generateAdjacencyMatrix()
         {
             int n = this.vertices.Count;
-            int[,] matrix = new int[n,n];
+            int[,] matrix = new int[n, n];
 
             this.edges.ForEach(edge => {
                 (string from, string to) = edge;
