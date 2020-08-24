@@ -211,7 +211,6 @@ namespace HW_02_Bipartite_Graphs
                     {
                         if (i == j)
                         {
-                            Console.WriteLine(1);
                             return false;
                         }
 
