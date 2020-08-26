@@ -1,2 +1,4 @@
-﻿Student3
-Student0
+﻿BC
+CD
+AC
+CE

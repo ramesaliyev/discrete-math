@@ -2,3 +2,5 @@
 LectureB
 LectureC
 LectureD
+LectureE
+LectureF

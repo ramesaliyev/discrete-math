@@ -5,7 +5,9 @@ using System.Linq;
 
 namespace HW_03_Project_Graph_Coloring
 {
-    class StudentsByLecture: Dictionary<string, List<string>> {}
+    // Type Definitions
+    using StudentsByLecture = Dictionary<string, List<string>>; // {lectureName:studentList}
+    using ColoredGraphDetails = Tuple<int, int[]>; // (colorCount, {vertexIndex: color})
 
     class Program
     {
@@ -13,16 +15,42 @@ namespace HW_03_Project_Graph_Coloring
 
         static void Main(string[] args)
         {
-            var studentsByLecture = Program.GetStudents();
+            var studentsByLecture = GetStudents();
             Console.WriteLine("Students by Lecture:");
-            Program.PrintStudents(studentsByLecture);
+            PrintDictStringToStringList(studentsByLecture);
 
             Console.WriteLine();
 
             var adjMatrix = GenerateAdjMatrix(studentsByLecture);
             Console.WriteLine("Adjacency Matrix:");
-            Program.PrintMatrix(adjMatrix);
+            PrintMatrix(adjMatrix);
 
+            Console.WriteLine();
+            (var colorCount, var lectureColors) = ColorGraph(adjMatrix);
+            Console.WriteLine("Minimum number of colors needed to color the graph: {0}", colorCount);
+            Console.WriteLine("Colors by Index of Lectures:");
+            PrintColorsByIndexOfLectures(studentsByLecture.Keys.ToList(), lectureColors);
+        }
+
+        static ColoredGraphDetails ColorGraph(int[,] adjMatrix)
+        {
+            var n = adjMatrix.GetLength(0);
+            int[] colors = Enumerable.Repeat(1, n).ToArray();
+
+            for (int i = 0; i < n; i++) {
+                int color = colors[i];
+
+                for (int j = 0; j < n; j++)
+                {
+                    if (i != j && adjMatrix[i, j] == 1 && colors[j] == color)
+                    {
+                        Console.WriteLine("{0}:{1}, {2}", i, j, color + 1);
+                        colors[j] = color + 1;
+                    }
+                }
+            }
+
+            return (colors.Distinct().Count(), colors).ToTuple();
         }
 
         static int[,] GenerateAdjMatrix(StudentsByLecture studentsByLecture)
@@ -101,11 +129,19 @@ namespace HW_03_Project_Graph_Coloring
             }
         }
 
-        static void PrintStudents(Dictionary<string, List<string>> list)
+        static void PrintDictStringToStringList(Dictionary<string, List<string>> list)
         {
             foreach (var key in list.Keys)
             {
                 Console.WriteLine("{0} -> [{1}]", key, string.Join(", ", list[key]));
+            }
+        }
+
+        static void PrintColorsByIndexOfLectures(List<string> lectureNames, int[] colors)
+        {
+            for (int i = 0; i < lectureNames.Count; i++)
+            {
+                Console.WriteLine("{0} -> [{1}]", lectureNames[i], colors[i]);
             }
         }
     }
