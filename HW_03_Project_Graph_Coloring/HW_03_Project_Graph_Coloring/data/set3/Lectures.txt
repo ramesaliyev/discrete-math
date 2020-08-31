@@ -1,0 +1,8 @@
+﻿LectureA
+LectureB
+LectureC
+LectureD
+LectureE
+LectureF
+LectureG
+LectureH

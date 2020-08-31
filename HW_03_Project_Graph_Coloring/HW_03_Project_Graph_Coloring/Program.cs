@@ -11,7 +11,7 @@ namespace HW_03_Project_Graph_Coloring
 
     class Program
     {
-        public static readonly string DATA_PATH = "/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_03_Project_Graph_Coloring/HW_03_Project_Graph_Coloring/data";
+        public static readonly string DATA_PATH = "/Users/ramesaliyev/Projects/Personal/hw-discrete-math/HW_03_Project_Graph_Coloring/HW_03_Project_Graph_Coloring/data/set3";
 
         static void Main(string[] args)
         {
