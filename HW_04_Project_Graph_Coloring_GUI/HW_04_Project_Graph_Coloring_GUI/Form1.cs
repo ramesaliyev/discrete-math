@@ -60,6 +60,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("Redrawing...");
             canvas.Refresh();
         }
     }

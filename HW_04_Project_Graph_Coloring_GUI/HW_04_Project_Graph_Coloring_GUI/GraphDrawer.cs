@@ -28,30 +28,55 @@ namespace HW_04_Project_Graph_Coloring_GUI
             canvas.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             vertexSize = panel.Width / (scheduleCalculator.lectures.Length + 1);
+            vertexSize = Math.Max(40, Math.Min(vertexSize, 100));
 
-            int centerY = panel.Top + (panel.Height / 2);
-            int centerX = panel.Left + (panel.Width / 2);
+            var center = new Point();
+            center.Y = panel.Top + (panel.Height / 2);
+            center.X = panel.Left + (panel.Width / 2);
 
             int radius = (Math.Min(panel.Width, panel.Height) / 2) - vertexSize;
-            int unitAngle = 360 / scheduleCalculator.lectures.Length;
 
-            Debug.WriteLine("Choosen colors");
-            var brushOfColor = generateBrushes(scheduleCalculator.calculatedColorCount);
-            var positionOfLectures = new Dictionary<int, Point>();
+            var positionOfLectures = calculatePositions(scheduleCalculator.lectures.Length, center, radius);
 
-            canvas.FillEllipse(Brushes.LightGray, centerX - radius, centerY - radius, radius * 2, radius * 2);
+            canvas.FillEllipse(Brushes.LightGray, center.X - radius, center.Y - radius, radius * 2, radius * 2);
 
-            for (int i = 0; i < scheduleCalculator.lectures.Length; i++)
+            DrawEdges(scheduleCalculator.adjMatrix, positionOfLectures);
+            DrawVertices(scheduleCalculator.calculatedColorCount, scheduleCalculator.calculatedLectureColors, positionOfLectures);
+        }
+
+        private Dictionary<int, Point> calculatePositions(int n, Point center, int radius)
+        {
+            var positions = new Dictionary<int, Point>();
+            int unitAngle = 360 / n;
+
+            for (int i = 0; i < n; i++)
             {
-                double angle = DegreesToRadians(i * unitAngle);
-                int x = centerX + Convert.ToInt32(Math.Cos(angle) * radius);
-                int y = centerY + Convert.ToInt32(Math.Sin(angle) * radius);
+                var point = new Point();
+                double angle = (i * unitAngle) * Math.PI / 180.0;
 
-                positionOfLectures.Add(i, new Point(x, y));
+                point.X = center.X + Convert.ToInt32(Math.Cos(angle) * radius);
+                point.Y = center.Y + Convert.ToInt32(Math.Sin(angle) * radius);
+
+                positions.Add(i, point);
             }
 
-            var adjMatrix = scheduleCalculator.adjMatrix;
-            var n = scheduleCalculator.adjMatrix.GetLength(0);
+            return positions;
+        }
+        
+        private void DrawVertices(int colorCount, int[] vertexColors, Dictionary<int, Point> vertexPositions)
+        {
+            var brushOfColor = generateBrushes(colorCount);
+
+            for (int i = 0; i < vertexPositions.Keys.Count; i++)
+            {
+                var color = vertexColors[i];
+                DrawVertex((i + 1).ToString(), brushOfColor[color], vertexPositions[i], vertexSize);
+            }
+        }
+
+        private void DrawEdges(int[,] adjMatrix, Dictionary<int, Point> vertexPositions)
+        {
+            var n = adjMatrix.GetLength(0);
 
             for (int i = 0; i < n; i++)
             {
@@ -59,15 +84,9 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 {
                     if (i != j && adjMatrix[i, j] == 1)
                     {
-                        DrawEdge(positionOfLectures[i], positionOfLectures[j]);
+                        DrawEdge(vertexPositions[i], vertexPositions[j]);
                     }
                 }
-            }
-
-            for (int i = 0; i < scheduleCalculator.lectures.Length; i++)
-            {
-                var color = scheduleCalculator.calculatedLectureColors[i];
-                DrawVertex((i + 1).ToString(), brushOfColor[color], positionOfLectures[i], vertexSize);
             }
         }
 
@@ -126,18 +145,14 @@ namespace HW_04_Project_Graph_Coloring_GUI
         {
             Brush[] brushes = new Brush[]{
                 Brushes.AliceBlue,
-                Brushes.AntiqueWhite,
                 Brushes.Aqua,
                 Brushes.Aquamarine,
                 Brushes.Azure,
                 Brushes.Bisque,
-                Brushes.BlanchedAlmond,
                 Brushes.BlueViolet,
                 Brushes.Brown,
                 Brushes.BurlyWood,
                 Brushes.CadetBlue,
-                Brushes.Chartreuse,
-                Brushes.Chocolate,
                 Brushes.Coral,
                 Brushes.CornflowerBlue,
                 Brushes.Crimson,
@@ -154,48 +169,21 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 Brushes.Goldenrod,
                 Brushes.Gray,
                 Brushes.Green,
-                Brushes.GreenYellow,
                 Brushes.HotPink,
                 Brushes.IndianRed,
                 Brushes.Khaki,
-                Brushes.Lavender,
-                Brushes.LavenderBlush,
-                Brushes.LawnGreen,
-                Brushes.LemonChiffon,
-                Brushes.LightBlue,
-                Brushes.LightCoral,
-                Brushes.LightCyan,
-                Brushes.LightGoldenrodYellow,
-                Brushes.LightGreen,
-                Brushes.LightPink,
-                Brushes.LightSalmon,
-                Brushes.LightSeaGreen,
-                Brushes.LightSkyBlue,
-                Brushes.LightSlateGray,
-                Brushes.LightSteelBlue,
                 Brushes.Lime,
                 Brushes.LimeGreen,
                 Brushes.Magenta,
-                Brushes.MintCream,
-                Brushes.MistyRose,
-                Brushes.Moccasin,
-                Brushes.NavajoWhite,
                 Brushes.Olive,
                 Brushes.OliveDrab,
-                Brushes.Orange,
-                Brushes.OrangeRed,
                 Brushes.Orchid,
-                Brushes.PaleGoldenrod,
                 Brushes.PaleGreen,
                 Brushes.PaleTurquoise,
                 Brushes.PaleVioletRed,
-                Brushes.PeachPuff,
                 Brushes.Peru,
                 Brushes.Pink,
-                Brushes.Plum,
-                Brushes.PowderBlue,
                 Brushes.Purple,
-                Brushes.Red,
                 Brushes.RosyBrown,
                 Brushes.RoyalBlue,
                 Brushes.Salmon,
@@ -213,7 +201,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 Brushes.Tomato,
                 Brushes.Turquoise,
                 Brushes.Violet,
-                Brushes.Wheat,
                 Brushes.Yellow,
                 Brushes.YellowGreen,
             };
@@ -221,11 +208,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             var randomIndex = (int)Math.Floor((double)GraphDrawer.random.Next(brushes.Length));
             Debug.WriteLine("color randomIndex=" + randomIndex);
             return brushes[randomIndex];
-        }
-
-        double DegreesToRadians(double degrees)
-        {
-            return degrees * Math.PI / 180.0;
         }
     }
 }
