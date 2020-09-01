@@ -147,11 +147,9 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 Brushes.AliceBlue,
                 Brushes.Aqua,
                 Brushes.Aquamarine,
-                Brushes.Azure,
                 Brushes.Bisque,
                 Brushes.BlueViolet,
                 Brushes.Brown,
-                Brushes.BurlyWood,
                 Brushes.CadetBlue,
                 Brushes.Coral,
                 Brushes.CornflowerBlue,
@@ -163,15 +161,11 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 Brushes.DodgerBlue,
                 Brushes.Firebrick,
                 Brushes.ForestGreen,
-                Brushes.Fuchsia,
-                Brushes.Gainsboro,
                 Brushes.Gold,
                 Brushes.Goldenrod,
                 Brushes.Gray,
                 Brushes.Green,
-                Brushes.HotPink,
                 Brushes.IndianRed,
-                Brushes.Khaki,
                 Brushes.Lime,
                 Brushes.LimeGreen,
                 Brushes.Magenta,
@@ -194,18 +188,17 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 Brushes.SkyBlue,
                 Brushes.SlateBlue,
                 Brushes.SlateGray,
-                Brushes.SpringGreen,
                 Brushes.SteelBlue,
                 Brushes.Tan,
                 Brushes.Thistle,
                 Brushes.Tomato,
                 Brushes.Turquoise,
-                Brushes.Violet,
                 Brushes.Yellow,
                 Brushes.YellowGreen,
             };
 
             var randomIndex = (int)Math.Floor((double)GraphDrawer.random.Next(brushes.Length));
+            Debug.WriteLine("Color:" + randomIndex);
             return brushes[randomIndex];
         }
     }
