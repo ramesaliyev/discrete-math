@@ -206,7 +206,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             };
 
             var randomIndex = (int)Math.Floor((double)GraphDrawer.random.Next(brushes.Length));
-            Debug.WriteLine("color randomIndex=" + randomIndex);
             return brushes[randomIndex];
         }
     }

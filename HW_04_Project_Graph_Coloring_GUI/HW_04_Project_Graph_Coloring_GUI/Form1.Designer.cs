@@ -35,13 +35,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxIndexFile = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.summary = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // canvas
             // 
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.canvas.Location = new System.Drawing.Point(0, 0);
-            this.canvas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.canvas.Margin = new System.Windows.Forms.Padding(4);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(746, 689);
             this.canvas.TabIndex = 0;
@@ -50,7 +53,7 @@
             // textBoxDataPath
             // 
             this.textBoxDataPath.Location = new System.Drawing.Point(755, 31);
-            this.textBoxDataPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDataPath.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDataPath.Name = "textBoxDataPath";
             this.textBoxDataPath.Size = new System.Drawing.Size(416, 22);
             this.textBoxDataPath.TabIndex = 1;
@@ -90,7 +93,7 @@
             // textBoxIndexFile
             // 
             this.textBoxIndexFile.Location = new System.Drawing.Point(1180, 31);
-            this.textBoxIndexFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIndexFile.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIndexFile.Name = "textBoxIndexFile";
             this.textBoxIndexFile.Size = new System.Drawing.Size(147, 22);
             this.textBoxIndexFile.TabIndex = 4;
@@ -106,12 +109,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.summary);
+            this.panel1.Location = new System.Drawing.Point(755, 125);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(571, 554);
+            this.panel1.TabIndex = 7;
+            // 
+            // summary
+            // 
+            this.summary.AutoSize = true;
+            this.summary.Location = new System.Drawing.Point(0, 0);
+            this.summary.Margin = new System.Windows.Forms.Padding(0);
+            this.summary.Name = "summary";
+            this.summary.Size = new System.Drawing.Size(425, 17);
+            this.summary.TabIndex = 0;
+            this.summary.Text = "Enter path information and click \"Load Data and Calculate\" button.";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1344, 690);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxIndexFile);
@@ -120,13 +144,15 @@
             this.Controls.Add(this.textBoxDataPath);
             this.Controls.Add(this.canvas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Least Exam Sessions Calculator, YTU, 18011708";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +167,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxIndexFile;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label summary;
     }
 }
 
