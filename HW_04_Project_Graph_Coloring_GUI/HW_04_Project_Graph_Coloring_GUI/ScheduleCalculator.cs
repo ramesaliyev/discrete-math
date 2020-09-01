@@ -17,6 +17,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
         public string INDEX_FILE = "";
 
         public int[,] adjMatrix;
+        public string[] lectures;
         public StudentsByLecture studentsByLecture;
 
         public int calculatedColorCount;
@@ -61,14 +62,12 @@ namespace HW_04_Project_Graph_Coloring_GUI
             int n = studentsByLecture.Keys.Count;
             int[,] matrix = new int[n, n];
 
-            var lectures = studentsByLecture.Keys.ToList();
-
-            for (int i = 0; i < lectures.Count - 1; i++)
+            for (int i = 0; i < lectures.Length - 1; i++)
             {
                 var lectureAName = lectures[i];
                 var lectureAStudents = studentsByLecture[lectureAName];
 
-                for (int j = i + 1; j < lectures.Count; j++)
+                for (int j = i + 1; j < lectures.Length; j++)
                 {
                     var lectureBName = lectures[j];
                     var lectureBStudents = studentsByLecture[lectureBName];
@@ -101,7 +100,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
         StudentsByLecture GetStudents()
         {
-            var lectures = ReadFile(INDEX_FILE);
+            lectures = ReadFile(INDEX_FILE).ToArray();
             var studentsByLecture = new StudentsByLecture();
 
             foreach (var lecture in lectures)
