@@ -54,7 +54,7 @@
             this.textBoxDataPath.Name = "textBoxDataPath";
             this.textBoxDataPath.Size = new System.Drawing.Size(416, 22);
             this.textBoxDataPath.TabIndex = 1;
-            this.textBoxDataPath.Text = "C:\\Personal\\DiscreteProjectData\\Set1";
+            this.textBoxDataPath.Text = "C:\\Personal\\DiscreteProjectData\\Set3";
             // 
             // label1
             // 
