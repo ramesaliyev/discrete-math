@@ -55,7 +55,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
         {
             if (!readyToPaint) return;
 
-            graphDrawer.draw(e.Graphics, scheduleCalculator);
+            graphDrawer.draw(canvas, e.Graphics, scheduleCalculator);
         }
 
         private void button1_Click(object sender, EventArgs e)
