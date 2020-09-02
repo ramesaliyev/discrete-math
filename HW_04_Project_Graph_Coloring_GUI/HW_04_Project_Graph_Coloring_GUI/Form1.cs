@@ -24,21 +24,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             readyToPaint = true;
             canvas.Refresh();
             PrintSummary();
-
-            // Debug Prints
-            Debug.WriteLine("");
-            Debug.WriteLine("Students by Lecture:");
-            DebugPrint.PrintDictStringToStringList(scheduleCalculator.studentsByLecture);
-            Debug.WriteLine("");
-
-            Console.WriteLine("Adjacency Matrix:");
-            DebugPrint.PrintMatrix(scheduleCalculator.adjMatrix);
-            Debug.WriteLine("");
-
-            Debug.WriteLine(String.Format("Minimum number of colors needed to color the graph: {0}", scheduleCalculator.calculatedColorCount.ToString()));
-            Debug.WriteLine("Colors by Index of Lectures:");
-            DebugPrint.PrintColorsByIndexOfLectures(scheduleCalculator.studentsByLecture.Keys.ToList(), scheduleCalculator.calculatedLectureColors);
-            Debug.WriteLine("");
         }
 
         private void canvas_Paint(object sender, PaintEventArgs e)
@@ -50,8 +35,8 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("Redrawing...");
             canvas.Refresh();
+            Debug.WriteLine("Redrawn.");
         }
 
         private void PrintSummary()
