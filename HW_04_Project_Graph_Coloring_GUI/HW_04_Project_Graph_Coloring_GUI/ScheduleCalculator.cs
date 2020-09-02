@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW_04_Project_Graph_Coloring_GUI
 {
+    using ColoredGraphDetails = Tuple<int, int[]>; // (colorCount, {vertexIndex: color})
     // Type Definitions
     using StudentsByLecture = Dictionary<string, List<string>>; // {lectureName:studentList}
-    using ColoredGraphDetails = Tuple<int, int[]>; // (colorCount, {vertexIndex: color})
 
     class ScheduleCalculator
     {
@@ -30,7 +28,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
             studentsByLecture = GetStudents();
             adjMatrix = GenerateAdjMatrix(studentsByLecture);
-            
+
             (var colorCount, var lectureColors) = ColorGraph(adjMatrix);
             calculatedColorCount = colorCount;
             calculatedLectureColors = lectureColors;
@@ -39,19 +37,27 @@ namespace HW_04_Project_Graph_Coloring_GUI
         ColoredGraphDetails ColorGraph(int[,] adjMatrix)
         {
             var n = adjMatrix.GetLength(0);
-            int[] colors = Enumerable.Repeat(1, n).ToArray();
+            int[] colors = Enumerable.Repeat(-1, n).ToArray();
 
             for (int i = 0; i < n; i++)
             {
-                int color = colors[i];
+                int[] usedColors = Enumerable.Repeat(0, n).ToArray();
 
                 for (int j = 0; j < n; j++)
                 {
-                    if (i != j && adjMatrix[i, j] == 1 && colors[j] == color)
+                    if (i != j && adjMatrix[i, j] == 1 && colors[j] != -1)
                     {
-                        colors[j] = color + 1;
+                        usedColors[colors[j]] = 1; // colors are 1 indexed
                     }
                 }
+
+                int k = 0;
+                while (usedColors[k] == 1)
+                {
+                    k++;
+                }
+
+                colors[i] = k; // colors are 1 indexed
             }
 
             return (colors.Distinct().Count(), colors).ToTuple();

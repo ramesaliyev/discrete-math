@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HW_04_Project_Graph_Coloring_GUI
@@ -62,7 +57,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
             return positions;
         }
-        
+
         private void DrawVertices(int colorCount, int[] vertexColors, Dictionary<int, Point> vertexPositions)
         {
             var brushOfColor = generateBrushes(colorCount);
@@ -133,7 +128,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
 
                 if (!brushes.Values.Contains(brush))
                 {
-                    brushes.Add(i + 1, brush);
+                    brushes.Add(i, brush);
                     i++;
                 }
             }
@@ -198,7 +193,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             };
 
             var randomIndex = (int)Math.Floor((double)GraphDrawer.random.Next(brushes.Length));
-            Debug.WriteLine("Color:" + randomIndex);
             return brushes[randomIndex];
         }
     }

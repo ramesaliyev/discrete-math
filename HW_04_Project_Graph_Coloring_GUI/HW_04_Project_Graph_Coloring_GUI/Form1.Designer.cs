@@ -57,7 +57,7 @@
             this.textBoxDataPath.Name = "textBoxDataPath";
             this.textBoxDataPath.Size = new System.Drawing.Size(416, 22);
             this.textBoxDataPath.TabIndex = 1;
-            this.textBoxDataPath.Text = "C:\\Personal\\DiscreteProjectData\\Set3";
+            this.textBoxDataPath.Text = "C:\\Personal\\DiscreteProjectData\\Set5";
             // 
             // label1
             // 
@@ -150,12 +150,10 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Least Exam Sessions Calculator, YTU, 18011708";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HW_04_Project_Graph_Coloring_GUI
@@ -22,11 +16,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             InitializeComponent();
             scheduleCalculator = new ScheduleCalculator();
             graphDrawer = new GraphDrawer();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonReloadAndCalculate_Click(object sender, EventArgs e)
@@ -93,7 +82,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
             text += String.Format("Colors numbers of lectures:\n");
             for (int i = 0; i < lectures.Length; i++)
             {
-                text += String.Format("{0}, {1} -> {2}", i + 1, lectures[i], lectureColors[i]);
+                text += String.Format("{0}, {1} -> {2}", i + 1, lectures[i], lectureColors[i] + 1);
                 text += "\n";
             }
             text += "\n";
@@ -111,7 +100,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
             text += String.Format("X {0}\n", string.Join(" ", Enumerable.Range(1, n)));
             for (int i = 0; i < n; i++)
             {
-                text += (i+1) + " ";
+                text += (i + 1) + " ";
 
                 for (int j = 0; j < n; j++)
                 {
