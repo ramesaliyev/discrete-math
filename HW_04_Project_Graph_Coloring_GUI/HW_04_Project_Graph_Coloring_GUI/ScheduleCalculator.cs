@@ -47,7 +47,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
                 {
                     if (i != j && adjMatrix[i, j] == 1 && colors[j] != -1)
                     {
-                        usedColors[colors[j]] = 1; // colors are 1 indexed
+                        usedColors[colors[j]] = 1;
                     }
                 }
 
@@ -57,7 +57,7 @@ namespace HW_04_Project_Graph_Coloring_GUI
                     k++;
                 }
 
-                colors[i] = k; // colors are 1 indexed
+                colors[i] = k;
             }
 
             return (colors.Distinct().Count(), colors).ToTuple();
@@ -88,7 +88,6 @@ namespace HW_04_Project_Graph_Coloring_GUI
             }
 
             return matrix;
-
         }
 
         bool HasCommonMember(List<string> A, List<string> B)
